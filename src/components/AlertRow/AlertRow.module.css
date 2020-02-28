@@ -1,0 +1,9 @@
+.container {
+    
+    flex-direction: column;
+    border: solid;
+    border-radius: 2px;
+    text-align: center;
+
+    
+}

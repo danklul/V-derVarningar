@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import AlertRow from './components/AlertRow'
-// import Buttons from './components/Buttons';
-
+import App_Header from './components/App_Header';
 
 interface EventCode {
     value: string, 
@@ -24,8 +23,6 @@ interface AlertData {
     sent: string,
 }
 
-
-
 const App = () => {
     const [hasError, setError] = useState(false);
     const [alerts, setAlerts] = useState<AlertData[]>([]);
@@ -40,42 +37,20 @@ const App = () => {
         fetchData()
     },  [])
 
-    const listItems = alerts.map(alert => <AlertRow title={alert.info.headline} valueCode={alert.info.eventCode[1].value} date={alert.sent} key={alert.identifier}/>);
-    // const listItems = alerts.map(alert => <AlertRow key={alert.identifier} descr ti />);
-  
-    // const listItems2 = alerts.map(alert => <li key={alert.info.headline}>{alert.info.headline}</li>);
-    
-    // const listItems3 = alerts.map(alert => <li key={alerts[1].info.event.length}>{alert.info.event}</li>);
-
-    const onButtonClickStart = () => {
-        console.log("Start button clicked")
-    }
-    const onButtonClickWeek = () => {
-        console.log("Week button clicked")
-    }
-    const onButtonClickStats = () => {
-        console.log("Statistics button clicked")
-    }
-
-    
+    const listItems = alerts.map(alert => 
+    <AlertRow 
+    title={alert.info.headline} 
+    valueCode={alert.info.eventCode[1].value} 
+    date={alert.sent} 
+    key={alert.identifier}/>);
 
     console.log(alerts)
     return (
         <div className="App">
-            <header className="App-header">
-              <h1> Väder varningar </h1>
-              <div className="ButtonContainer">
-                <button onClick={onButtonClickStart}> Start </button>
-                <button onClick={onButtonClickWeek}> This Week </button>
-                <button onClick={onButtonClickStats}> Statistics </button>
-              </div>
-            </header>
-            
+            <App_Header/>
+          
             <div >
-                {/* <AlertRow title={}/> */}
-                 { listItems } 
-                {/* <p> { listItems2 } </p>
-                <p> { listItems3 } </p> */}
+                {listItems} 
             </div>
         </div>
   );

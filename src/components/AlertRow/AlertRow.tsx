@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AlertRow.module.css'
-import { tsPropertySignature } from '@babel/types';
+
 
 interface AlertProps {
     title: string,

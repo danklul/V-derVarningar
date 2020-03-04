@@ -37,11 +37,13 @@ const App = () => {
         fetchData()
     },  [])
 
+    
+
     const listItems = alerts.map(alert => 
     <AlertRow 
     title={alert.info.headline} 
     valueCode={alert.info.eventCode[1].value} 
-    date={alert.sent} 
+    date={new Date(alert.sent)}
     key={alert.identifier}/>);
 
     console.log(alerts)

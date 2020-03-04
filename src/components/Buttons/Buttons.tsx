@@ -1,11 +1,10 @@
 import './Buttons.module.css';
 
 interface ButtonProps {
-    title: string,
+    btn_event: string,
 }
 
-const Buttons = ({title}: ButtonProps) => {
-
+const Buttons = ({btn_event}: ButtonProps) => {
     return
 }
 

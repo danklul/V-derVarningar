@@ -12,9 +12,9 @@ interface AlertProps {
 const AlertRow = ({title, valueCode, date}: AlertProps) => {
     return( 
         <div className={styles.container}>
-            <h3> {title} </h3>
-            <p> {valueCode} </p>
-            <p> {date} </p>
+            <h3 style={{marginTop: 4, marginBottom: 4}}> {title} </h3>
+            <p style={{marginTop: 2.5, marginBottom: 2.5}}> {valueCode} </p>
+            <p style={{marginTop: 2.5, marginBottom: 2.5}}> {date} </p>
         </div>
     )
 }

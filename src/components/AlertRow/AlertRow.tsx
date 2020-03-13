@@ -4,7 +4,6 @@ import styles from './AlertRow.module.css'
 
 interface AlertProps {
     title: string,
-    
     onClick: (id:string) => void,
     date: Date,
     id: string,
